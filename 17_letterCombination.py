@@ -18,8 +18,6 @@ class Solution(object):
 
         if (len(digits) == 0):
             return res
-
-        
         
         mapping = ["0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
         
