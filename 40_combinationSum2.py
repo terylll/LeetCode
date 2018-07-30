@@ -5,7 +5,7 @@ class Solution(object):
         :type target: int
         :rtype: List[List[int]]
         """
-        
+                        
         candidates.sort()
         res = []
         p = []
@@ -13,7 +13,7 @@ class Solution(object):
         self.bt(candidates, target, p, res, 0)
 
         return res
-        
+
     def bt(self, candidates, target, path, res, start):
         """
         Parameters

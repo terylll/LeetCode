@@ -5,6 +5,17 @@ class Solution(object):
         :type target: int
         :rtype: List[List[int]]
         """
+
+        """
+        Recursive Formula
+
+        T(n) = (n - 1) * T(n - 1)
+        T(1) = 1
+        """
+
+
+
+
         candidates.sort()
         res = []
         p = []
