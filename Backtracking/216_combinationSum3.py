@@ -13,7 +13,7 @@ class Solution(object):
         res = []
         self.helper(k, n, used, 0, [], res)
         return res
-
+    
     def helper(self, K, N, used, pos, path, res):
         if (len(path) >= K):
             if (sum(path) == N):

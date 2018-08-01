@@ -16,7 +16,7 @@ class Solution(object):
 
         left = 0
         right = len(height - 1)
-
+    
         maxArea = 0
 
         while (left < right):
