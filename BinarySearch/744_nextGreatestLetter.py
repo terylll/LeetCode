@@ -5,21 +5,22 @@ class Solution(object):
         :type target: str
         :rtype: str
         """
-        
+
+        n = len(letters)
         l = 0
-        r = len(letters) - 1
+        r = n
 
         while (l < r):
             mid = (l + r) / 2
-            if (letters[mid] <= target):
-                l = mid + 1
-            else:
+            if (letters[mid] > target):
                 r = mid
+            else:
+                # letters[mid] <= target
+                l = mid + 1
         
-        if (l == len(letters) - 1):
-            return letters[0]
+        return letters[l % len(letters)]
 
-        return letters[l] 
+
 
 sol = Solution()
 print(sol.nextGreatestLetter(["c", "f", "j"], "g"))
