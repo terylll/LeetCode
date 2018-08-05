@@ -1,7 +1,4 @@
 class Solution(object):
-    def lengthLongestPath2(self, input):
-
-
     def lengthLongestPath(self, input):
         """
         :type input: str
@@ -37,6 +34,10 @@ class Solution(object):
             # print("Stack: %s, length: %d, max_len: %d" % ([i[0] for i in stack], stack_len, max_len))
 
         return max_len
+
+    def lengthLongestPath2(self, input):
+        
+        for path in input.split('\n'):
 
             
 

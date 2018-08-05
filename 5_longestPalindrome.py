@@ -39,7 +39,7 @@ class Solution(object):
             for i in range(len(s) - offset):
                 if (res[i + 1][i + offset - 1] == 1 and s[i] == s[i + offset]):
                     res[i][i + offset] = 1
-
+        
         """
         Find Longest
         """
