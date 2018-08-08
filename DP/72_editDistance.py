@@ -29,7 +29,7 @@ class Solution(object):
         
         for row in dp:
             print(row)
-
+        
         return dp[len(word1)][len(word2)]
         
 sol = Solution()

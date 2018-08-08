@@ -25,7 +25,9 @@ class Solution(object):
             q.append(i)
             
             if (i >= k - 1):
-                res.append(q[0])
+                res.append(nums[q[0]])
+
+            # print([nums[i] for i in q], [nums[i] for i in res])
 
         return res
 
