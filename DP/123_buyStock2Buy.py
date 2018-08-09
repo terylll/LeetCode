@@ -1,9 +1,14 @@
 class Solution(object):
-    def maxProfit(self, prices):
+    def maxProfit2(self, prices):
         """
         :type prices: List[int]
         :rtype: int
         """
+
+        """
+        O(n^3): TLE
+        """
+
         
         """
         p[i][j]: The most profit that i-th transaction until day 'j'.
@@ -29,5 +34,31 @@ class Solution(object):
                 p[i][j] = max(p[i][j], p[i][j - 1])
         return p[2][len(prices) - 1]
 
+    def maxProfit(self, prices):
+        """
+
+        buy[i][j]: At day 'j', the last action was buy. There are 'i' transaction till day 'j'
+        sell[i][j]: At day 'i', the last action was sell    
+
+        buy[i][j] = max{buy[i][j - 1], sell[i - 1][j - 1] - price[j]}
+        sell[i][j] = max{sell[i][j - 1], buy[i][j - 1] + price[j]}
+
+        Base Case:
+        
+        buy[0][0] = -price[0]
+        """
+
+        buy = [[0 for j in prices] for i in range(2)]
+        sell = [[0 for j in prices] for i in range(2)]
+
+        buy[0][0] = -prices[0]
+        buy[1][0] = -prices[0]
+
+        for i in range(2):
+            for j in range(1, len(prices)):
+                buy[i][j] = max(buy[i][j - 1], sell[i - 1][j - 1] - prices[j])
+                sell[i][j] = max(sell[i][j - 1], buy[i][j - 1] + prices[j])
+        return max(sell[0][-1], sell[1][-1])
+
 sol = Solution()
-print(sol.maxProfit([1, 2, 3, 4, 5]))
+print(sol.maxProfit([7, 6, 5, 4, 3, 2, 1]))

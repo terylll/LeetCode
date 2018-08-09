@@ -7,7 +7,7 @@ class Solution(object):
         :type n: int
         :rtype: void Do not return anything, modify nums1 in-place instead.
         """
-
+        
         # Move back to front
 
         i = m - 1
@@ -24,4 +24,10 @@ class Solution(object):
 
             p -= 1
         
-        return nums1
+        # return nums1
+
+nums1 = [1,2,3,0,0,0]
+nums2 = [2,5,6]
+sol = Solution()
+sol.merge(nums1, 3, nums2, 3)
+print(nums1)
